@@ -16,3 +16,13 @@ alias mysql='/usr/local/mysql/bin/mysql'
 alias mysqladmin='/usr/local/mysql/bin/mysqladmin'
 alias va='vagrant'
 alias lrt="ls -lrt"
+
+# Python venv
+# Iterate over virtual environments directory and build an
+# alias to act as a shortcut to activate each environment
+VENV_HOME="$HOME/.virtualenvs/*/"
+alias_template="pv.aaa"
+venv_template="source $HOME/.virtualenvs/bbb/bin/activate"
+for pyvenv in $(ls -d1 $VENV_HOME | cut -d / -f 5); do
+    alias ${alias_template/aaa/$pyvenv}="${venv_template/bbb/$pyvenv}"
+done
