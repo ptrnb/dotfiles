@@ -1,5 +1,14 @@
 # Set shell options
-# set -o vi
+set -o vi
+
+# JVM
+export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
+
+# Maven Options
+export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=512m"
+
+# set functions and aliases
+[ -r ${HOME}/.aliases ] && . ${HOME}/.aliases
 
 # pyenv
 #export PYENV_ROOT=$HOME/.pyenv
@@ -14,10 +23,4 @@
 # unset -f $(compgen -A function)
 # source /usr/local/bin/virtualenvwrapper.sh
 
-# Add Homebrew to the path
-export PATH=/usr/local/homebrew/bin:$PATH
-
-
-# set functions and aliases
-# [ -r ${HOME}/.aliases ] && . ${HOME}/.aliases
 
