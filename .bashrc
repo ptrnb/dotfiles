@@ -10,6 +10,10 @@ export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=512m"
 # set functions and aliases
 [ -r ${HOME}/.aliases ] && . ${HOME}/.aliases
 
+# fix coreutils quoting style to get rid of quotes 
+# around ls items that contain a space
+export QUOTING_STYLE=literal
+
 # pyenv
 #export PYENV_ROOT=$HOME/.pyenv
 #export PATH=$PYENV_ROOT/bin:$PATH
